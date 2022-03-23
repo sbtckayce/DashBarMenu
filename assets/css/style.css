@@ -1,0 +1,249 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:root{
+    --body-color:#e4e9f7;
+    --sidebar-color:#fff;
+    --primary-color:#695cef;
+    --primary-color-light:#f6f5ff;
+    --toggle-color:#ddd;
+    --text-color:#707070;
+
+   
+}
+body{
+    transition: 5s;
+}
+body.dark{
+    --body-color:#18191a;
+    --sidebar-color:#242526;
+    --primary-color:#46859e;
+    --primary-color-light:#3a3b3c;
+    --toggle-color:#fff;
+    --text-color:#ccc;
+   
+}
+li{
+    list-style: none;
+}
+a{
+    color: var(--text-color);
+    text-decoration: none;
+}
+.side-bar-main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    padding: 10px 14px;
+    background-color: var(--sidebar-color);
+    transform: 0.25s;
+}
+.side-bar-main.close{
+    width: 85px;
+  
+}
+.side-bar-main.close .item-text{
+   display: none;
+}
+.side-bar-main.close .content-header{
+    opacity: 0;
+}
+.side-bar-main.close .right-icon{
+    right: -30px;
+    top: 25px;
+}
+.side-bar-main.close .switch{
+    transform: translateX(-50px);
+    z-index: 1000;
+}
+.side-bar-main.close .moon{
+    display: none;
+}
+.side-bar-header{
+    position: relative;
+}
+.img img{
+    width: 40px;
+  border-radius: 5px;
+
+}
+.img{
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-main{
+    height: 100vh;
+    background-color: var(--body-color);
+}
+.img-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.4s;
+}
+.content-header{
+    width: 150px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+}
+.name{
+    font-weight: 700;
+}
+.profession{
+    margin-top: -2px;
+}
+.right-icon{
+    position: absolute;
+    content: '';
+    top: 25%;
+    right: -12%;
+    width: 25px;
+    height: 25px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.25s;
+    color: var(--toggle-color);
+}
+.right-icon.toggle{
+    transform: rotate(180deg);
+}
+.menu-item{
+    list-style: none;
+    height: 50px;
+  
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+.menu-item a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+   border-radius: 15px;
+    transition: 0.4s;
+    width: 100%;
+}
+.item-icon ion-icon{
+    font-size: 20px;
+    min-width: 60px;
+}
+.item-icon{
+    line-height: 5px;
+}
+.search-box{
+    border-radius: 15px;
+    background-color: var(--primary-color-light);
+}
+.search-box a input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--primary-color-light);
+   
+}
+.menu-list .menu-item a .item-icon,
+.menu-list .menu-item a .item-text{
+    color: var(--text-color);
+    transition: 0.5s;
+}
+.menu-list .menu-item a:hover{
+    border-radius: 15px;
+    background-color: var(--primary-color);
+}
+.menu-list .menu-item a:hover .item-icon,
+.menu-list .menu-item a:hover .item-text{
+    color: var(--primary-color-light);
+}
+.menu-bar{
+    
+    height: calc(100% - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.mode{
+    border-radius: 15px;
+    background-color: var(--primary-color-light);
+}
+.moon-sun{
+    position: relative;
+    /* color: red; */
+    height: 50px;
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+}
+.moon{
+    position: absolute;
+    content: '';
+    font-size: 20px;
+    left: 40% ;
+
+    z-index: 10;
+   
+    color: var(--text-color);
+}
+.sun{
+    position: absolute;
+    content: '';
+    font-size: 20px;
+    left: 40% ;
+
+    z-index: 9;
+    opacity: 0;
+   
+    color: var(--text-color);
+}
+.mode .item-text{
+    padding-left: 10px;
+    color: var(--text-color);
+}
+.toggle-switch{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    min-width: 60px;
+    /* background-color: red; */
+    justify-content: center;
+}
+.toggle-switch .switch{
+    position: relative;
+    height: 22px;
+    width: 40px;
+    background-color: var(--toggle-color);
+    border-radius: 20px;
+}
+.toggle-switch .switch::before{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    content: '';
+    top: 12%;
+    left: 2px;
+    /* transform: translateY(-9px); */
+    border-radius: 50%;
+    background-color: var(--primary-color-light);
+    transition: 0.25s;
+    cursor: pointer;
+}
+.toggle-switch.toggle .switch::before
+{
+    
+    background-color: var(--text-color);
+    transform: translateX(20px);
+}
